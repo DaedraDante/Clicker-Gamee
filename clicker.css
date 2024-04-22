@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(226, 239, 250);
+}
+.wrapper {
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+#main-img {
+    height:300px;
+    width:300px;
+    margin: 0 auto;
+    margin-top: 380px;
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+#main-img-text {
+    margin: 0 auto;
+    margin-top:20px;
+}
+#player-money {
+    margin:0 auto;
+    margin-top:15px;
+}
+.smallify {
+    transform: scale(0.9); /* Make the image 10% smaller */
+}
