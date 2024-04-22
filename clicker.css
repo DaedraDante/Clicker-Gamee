@@ -18,14 +18,23 @@ body {
     margin: 0 auto;
     margin-top:20px;
 }
-#player-money {
-    margin:0 auto;
-    margin-top:15px;
-}
+
 #player-money-text {
     margin:0 auto;
     margin-top:15px;
+    font-size: 50px;
 }
 .smallify {
     transform: scale(0.9); /* Make the image 10% smaller */
+}
+.dabloons {
+    margin:0 auto;
+    margin-top:15px;
+}
+
+.pixelify-sans-estepixel {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
