@@ -1,14 +1,14 @@
 
 //variable assignation
 const mainImg = document.getElementById("main-img");
-let playerMoney = document.getElementById("player-money")
-
-playerMoney.textContent = 0
+const playerMoneyText = document.getElementById("player-money-text");
+//const playerMoneyText = document.getElementById("player-money-text");
+let playerMoney = 0;
 // Add click event listener to the image
 mainImg.addEventListener("click", () => {
     // Toggle the "smallify" class
     mainImg.classList.toggle("smallify");
-    playerMoney.textContent = playerMoney++
+    playerMoneyText.textContent = playerMoney++
 });
 
 // Function to remove the "smallify" class after the transition ends

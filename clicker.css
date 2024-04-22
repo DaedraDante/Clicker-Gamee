@@ -22,6 +22,10 @@ body {
     margin:0 auto;
     margin-top:15px;
 }
+#player-money-text {
+    margin:0 auto;
+    margin-top:15px;
+}
 .smallify {
     transform: scale(0.9); /* Make the image 10% smaller */
 }
