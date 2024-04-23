@@ -1,11 +1,40 @@
 body {
     background-color: rgb(226, 239, 250);
+    padding: 0px;
+    margin: 0px;
 }
 .wrapper {
-    height:100%;
-    width:100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+.wip-left {
+    width:25%;
+    height:100vh;
+    background-color: blue;
+    border: 5px rgb(71, 49, 30) solid;
+    background-image: url(https://external.xx.fbcdn.net/emg1/v/t13/11187617824138237503?url=https%3A%2F%2Fimg.recraft.ai%2Fjy1rTlthTiK5TmR4al4X15-B6D8zGg0s22QDRT27IOY%2Frs%3Afit%3A1200%3A630%3A0%2Fq%3A95%2Fg%3Ano%2Fplain%2Fabs%3A%2F%2Fprod%2Fimages%2Fc4bd0f34-0562-4e76-9b27-c199ca958a20%40jpg&fb_obo=1&utld=recraft.ai&stp=c0.5000x0.5000f_dst-emg0_p300x157_q75&ccb=13-1&oh=06_Q399Mmfze-i12dYkoRzCjypxXgMlsZXQ-bV-N933MqHny4Q&oe=6629243E&_nc_sid=c24604);
+    
+}
+.center {
+    height:99.5vh;
+    width:50%;
     display: flex;
     flex-direction: column;
+    border: 5px rgb(71, 49, 30) solid;
+    background-image: url(https://img.craftpix.net/2023/04/Free-Nature-Backgrounds-Pixel-Art3.png);
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+.upgrades-right {
+    width:25%;
+    height:100vh;
+    background-color: blue;
+    border: 5px rgb(71, 49, 30) solid;
+    background-image: url(https://external.xx.fbcdn.net/emg1/v/t13/11187617824138237503?url=https%3A%2F%2Fimg.recraft.ai%2Fjy1rTlthTiK5TmR4al4X15-B6D8zGg0s22QDRT27IOY%2Frs%3Afit%3A1200%3A630%3A0%2Fq%3A95%2Fg%3Ano%2Fplain%2Fabs%3A%2F%2Fprod%2Fimages%2Fc4bd0f34-0562-4e76-9b27-c199ca958a20%40jpg&fb_obo=1&utld=recraft.ai&stp=c0.5000x0.5000f_dst-emg0_p300x157_q75&ccb=13-1&oh=06_Q399Mmfze-i12dYkoRzCjypxXgMlsZXQ-bV-N933MqHny4Q&oe=6629243E&_nc_sid=c24604);
+ 
 }
 #main-img {
     height:300px;
