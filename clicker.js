@@ -3,18 +3,20 @@
 const mainImg = document.getElementById("main-img");
 const playerMoneyText = document.getElementById("player-money-text");
 const btnUpgrade1 = document.getElementById("btn-upgrade1");
-//const playerMoneyText = document.getElementById("player-money-text");
-let playerMoney = 0;
 let multiplier = 1;
+let playerMoney = 0;
 // Add click event listener to the image
 mainImg.addEventListener("click", () => {
     // Toggle the "smallify" class
     mainImg.classList.toggle("smallify");
-    playerMoneyText.textContent = playerMoney++ * multiplier;
+    playerMoney += multiplier
+    playerMoneyText.textContent = playerMoney;
 });
 btnUpgrade1.addEventListener("click", () => {
     if(playerMoney >= 25) {
         multiplier = multiplier + 1
+        playerMoney -= 25;
+        playerMoneyText.textContent = playerMoney;
     }else {
         alert("not enough money")
     }
