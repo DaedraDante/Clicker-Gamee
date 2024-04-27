@@ -5,17 +5,30 @@ const playerMoneyText = document.getElementById("player-money-text");
 const btnUpgrade1 = document.getElementById("btn-upgrade1");
 let multiplier = 1;
 let playerMoney = 0;
-// Add click event listener to the image
+
+     // Basic clickerlogic
 mainImg.addEventListener("click", () => {
-    // Toggle the "smallify" class
     mainImg.classList.toggle("smallify");
     playerMoney += multiplier
     playerMoneyText.textContent = playerMoney;
 });
+
+    // Variables for btnUpgrade1
+ const costOriginal = 25;
+ const costAddedPercentage = 15;
+ const costNew = Math.floor(costOriginal * (1 + costAddedPercentage / 100));
+ let costStage = Math.floor(costNew * (1 + costAddedPercentage / 100));
+    // Loop upgrade logic for btnUpgrade1
+ for(let i = 0; i < 10; i++) {
+     costStage = Math.floor(costStage * (1 + costAddedPercentage / 100));
+ }
+    // Upgrade logic for btnUpgrade1
+ btnUpgrade1.textContent = `Upgrade the click ${costNew}`
 btnUpgrade1.addEventListener("click", () => {
-    if(playerMoney >= 25) {
+   
+    if(playerMoney >= costNew) {
         multiplier = multiplier + 1
-        playerMoney -= 25;
+        playerMoney -= costNew;
         playerMoneyText.textContent = playerMoney;
     }else {
         alert("not enough money")
