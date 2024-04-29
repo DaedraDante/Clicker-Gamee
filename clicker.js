@@ -16,29 +16,38 @@ mainImg.addEventListener("click", () => {
     // Variables for btnUpgrade1
  const costOriginal = 25;
  const costAddedPercentage = 15;
- const costNew = Math.floor(costOriginal * (1 + costAddedPercentage / 100));
- let costStage = Math.floor(costNew * (1 + costAddedPercentage / 100));
-    // Loop upgrade logic for btnUpgrade1
- for(let i = 0; i < 10; i++) {
-     costStage = Math.floor(costStage * (1 + costAddedPercentage / 100));
- }
+ let costStage = Math.floor(costOriginal * (1 + costAddedPercentage / 100));
+ let boughtNofUpgrades = 0;
     // Upgrade logic for btnUpgrade1
- btnUpgrade1.textContent = `Upgrade the click ${costNew}`
-btnUpgrade1.addEventListener("click", () => {
-   
-    if(playerMoney >= costNew) {
-        multiplier = multiplier + 1
-        playerMoney -= costNew;
-        playerMoneyText.textContent = playerMoney;
+ btnUpgrade1.textContent = `Upgrade the click ${costOriginal} dubloons`
+ btnUpgrade1.addEventListener("click", () => {
+    
+        // Checking if the money is sufficient n stuff
+    if(playerMoney >= costOriginal && boughtNofUpgrades === 0) {
+         multiplier = multiplier + 1;
+         playerMoney -= costOriginal;
+         playerMoneyText.textContent = playerMoney;
+         boughtNofUpgrades++;
+         btnUpgrade1.textContent = `Upgrade the click 30 dubloons`
+    }else if(playerMoney >= 30 && boughtNofUpgrades === 1) {
+         multiplier = multiplier + 1;
+         playerMoney -= 30;
+         playerMoneyText.textContent = playerMoney;
+         boughtNofUpgrades++;
+         btnUpgrade1.textContent = `Upgrade the click 35 dubloons`
+    }else if(playerMoney >= 35 && boughtNofUpgrades === 2) {
+         multiplier = multiplier + 1;
+         playerMoney -= 35;
+         playerMoneyText.textContent = playerMoney;
     }else {
         alert("not enough money")
     }
-})
+});
 
 // Function to remove the "smallify" class after the transition ends
 function removeSmallifyClass() {
     mainImg.classList.remove("smallify");
-}
+};
 
 // Add event listener for transitionend event
 mainImg.addEventListener("transitionend", removeSmallifyClass);
