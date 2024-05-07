@@ -6,39 +6,39 @@ const btnUpgrade1 = document.getElementById("btn-upgrade1");
 let multiplier = 1;
 let playerMoney = 0;
 
-     // Basic clickerlogic
+     // Basic clicker logic
 mainImg.addEventListener("click", () => {
     mainImg.classList.toggle("smallify");
     playerMoney += multiplier
     playerMoneyText.textContent = playerMoney;
 });
-
-    // Variables for btnUpgrade1
- const costOriginal = 25;
- const costAddedPercentage = 15;
- let costStage = Math.floor(costOriginal * (1 + costAddedPercentage / 100));
- let boughtNofUpgrades = 0;
-    // Upgrade logic for btnUpgrade1
- btnUpgrade1.textContent = `Upgrade the click ${costOriginal} dubloons`
- btnUpgrade1.addEventListener("click", () => {
     
-        // Checking if the money is sufficient n stuff
-    if(playerMoney >= costOriginal && boughtNofUpgrades === 0) {
-         multiplier = multiplier + 1;
-         playerMoney -= costOriginal;
-         playerMoneyText.textContent = playerMoney;
-         boughtNofUpgrades++;
-         btnUpgrade1.textContent = `Upgrade the click 30 dubloons`
-    }else if(playerMoney >= 30 && boughtNofUpgrades === 1) {
-         multiplier = multiplier + 1;
-         playerMoney -= 30;
-         playerMoneyText.textContent = playerMoney;
-         boughtNofUpgrades++;
-         btnUpgrade1.textContent = `Upgrade the click 35 dubloons`
-    }else if(playerMoney >= 35 && boughtNofUpgrades === 2) {
-         multiplier = multiplier + 1;
-         playerMoney -= 35;
-         playerMoneyText.textContent = playerMoney;
+    // Defining the upgrade costs
+ const upgradeCosts = [];
+ const costOriginal = 25;
+ const costAddedPercentage = 35;
+for(let i = 0; i < 10; i++) {
+     const newCost = Math.floor(costOriginal * Math.pow(1 + costAddedPercentage / 100, i))
+    upgradeCosts.push(newCost);
+}
+
+
+    // Upgrade logic for btnUpgrade1
+ let upgradeIndex = 0;
+ btnUpgrade1.textContent = `Concert no remorse: ${costOriginal} dubloons`
+ btnUpgrade1.addEventListener("click", () => {
+ 
+    if(playerMoney >= upgradeCosts[upgradeIndex]) {
+        multiplier += 1;
+        playerMoney -= upgradeCosts[upgradeIndex];
+        playerMoneyText.textContent = playerMoney;
+        upgradeIndex += 1;
+        if(upgradeIndex < upgradeCosts.length) {
+            btnUpgrade1.textContent = `Concert no remorse: ${upgradeCosts[upgradeIndex]} dubloons`
+        }else {
+            btnUpgrade1.textContent = "Upgraded to max";
+            btnUpgrade1.disabled = true;
+        }
     }else {
         alert("not enough money")
     }
